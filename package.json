@@ -1,31 +1,18 @@
 {
-  "name": "daisyui",
-  "version": "1.14.1",
-  "description": "DaisyUI - Tailwind CSS Components",
-  "author": "Pouya Saadeghi",
-  "license": "MIT",
-  "homepage": "https://github.com/saadeghi/daisyui",
+  "name": "@deboxsoft/limitless",
+  "version": "1.0.1-beta.1",
+  "description": "Base DaisyUI with limitless theme - Tailwind CSS Components",
+  "author": "Nurdiansyah",
+  "license": "private",
+  "homepage": "https://github.com/nurdiansyah/daisyui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saadeghi/daisyui.git"
+    "url": "git+https://github.com/nurdiansyah/daisyui.git"
   },
   "bugs": {
-    "url": "https://github.com/saadeghi/daisyui/issues"
+    "url": "https://github.com/nurdiansyah/daisyui/issues"
   },
-  "keywords": [
-    "design-system",
-    "tailwindcss",
-    "components",
-    "ui-library",
-    "component",
-    "framework",
-    "tailwind",
-    "theming",
-    "postcss",
-    "design",
-    "css",
-    "ui"
-  ],
+  "keywords": [],
   "main": "index.js",
   "typings": "index.js",
   "files": [
@@ -38,19 +25,21 @@
   "publishConfig": {
     "access": "public",
     "branches": [
-      "master"
+      "limitless"
     ]
   },
   "devDependencies": {
+    "@nurdiansyah/bump": "^6.1.2",
     "autoprefixer": "10.0.4",
     "cssnano": "4.1.10",
-    "postcss": "8.1.10",
+    "postcss": "^8.3.7",
     "postcss-cli": "8.3.0",
     "postcss-import": "13.0.0",
     "postcss-nested": "5.0.1",
     "prejss-cli": "0.3.3",
     "rtlcss": "3.0.0",
-    "tailwindcss": "2.0.1"
+    "tailwindcss": "2.0.1",
+    "yarpm": "^1.1.1"
   },
   "scripts": {
     "index": "cp -R ./src/index.js ./index.js",
@@ -79,6 +68,9 @@
     "install:docs": "cd src/docs && npm install",
     "dev": "cd src/docs && npm run dev",
     "add": "touch src/components/unstyled/$npm_config_name.css && touch src/components/styled/$npm_config_name.css",
-    "postadd": "open src/components/unstyled/$npm_config_name.css && open src/components/styled/$npm_config_name.css"
+    "postadd": "open src/components/unstyled/$npm_config_name.css && open src/components/styled/$npm_config_name.css",
+    "bump": "yarpm run build && bump -c \"v\"",
+    "release": "yarpm run bump -- -t \"v\" && yarpm-pnpm publish",
+    "release:dev": "git add . && yarpm run bump --  -cp prerelease && yarpm-pnpm publish --tag dev --no-git-checks"
   }
 }
