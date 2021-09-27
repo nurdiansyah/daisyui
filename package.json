@@ -1,16 +1,16 @@
 {
   "name": "@deboxsoft/limitless",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "description": "Base DaisyUI with limitless theme - Tailwind CSS Components",
   "author": "Nurdiansyah",
-  "license": "private",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/nurdiansyah/daisyui",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nurdiansyah/daisyui.git"
   },
   "bugs": {
-    "url": "https://github.com/nurdiansyah/daisyui/issues"
+    "url": "https://github.com/nurdiansyah/issues"
   },
   "keywords": [],
   "main": "index.js",
@@ -69,8 +69,8 @@
     "dev": "cd src/docs && npm run dev",
     "add": "touch src/components/unstyled/$npm_config_name.css && touch src/components/styled/$npm_config_name.css",
     "postadd": "open src/components/unstyled/$npm_config_name.css && open src/components/styled/$npm_config_name.css",
-    "bump": "yarpm run build && bump -c \"v\"",
-    "release": "yarpm run bump -- -t \"v\" && yarpm-pnpm publish",
+    "bump": "yarpm run build && bump -c",
+    "release": "yarpm run bump -- -t && yarpm-pnpm publish",
     "release:dev": "git add . && yarpm run bump --  -cp prerelease && yarpm-pnpm publish --tag dev --no-git-checks"
   }
 }
